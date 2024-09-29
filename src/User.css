@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+body, html {
+    background-image: url('/src/apibackground.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.header {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 40px;
+    /* background-color: #f0f0f0; Adjust as needed */
+    margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+.add-btn {
+    background: black;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    padding: 10px 15px;
+}
+
+.add-btn svg {
+
+    width: 35px;
+    height: 35px;
+}
+
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   min-height: 100vh;
+   justify-content: center;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 80%;
+   margin: auto;
+   margin-top: 20px;
+}
+.container {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.box {
+    width: calc(33.33% - 20px);
+    height: 200px;
+    background-color: #f7f7f9;
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: flex-start;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+
+.box-btn,
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    /* Add other styles */
+}
+
+.box svg{
+    width: 24px;
+    height: 24px;
+}
+.input-btn {
+  color: white;
+  background: black;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  padding: 12px 16px;
+}
+.close-btn {
+  color: white;
+  background: black;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  padding: 12px;
+}
+.input-btn:hover{
+  background-color: #4d4b4b;
+}
+.close-btn:hover{
+  background-color: #4d4b4b;
+}
+.box-btn svg {
+    width: 24px;
+    height: 24px;
+    /* stroke: #000000; */
+    fill: none;
+}
+
+#iconButton svg {
+    width: 28px;
+    height: 28px;
+}
+
+#iconButton:hover #originalIcon {
+    display: none; /* Hide original icon on hover */
+}
+
+#iconButton:hover #hoverIcon {
+    display: initial; /* Show hover icon on hover */
+}
+
+.box p {
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+    overflow: hidden;
+    font-weight: 900;
+    font-size: x-large;
+}
+
+.date {
+    font-size: 14px;
+    color: #777;
+    overflow: hidden;
+}
+
+@media (max-width: 700px) {
+    .container {
+        justify-content: center;
+        /* margin: 30px; */
+    }
+
+    .box {
+        width: calc(100% - 20px);
+        /* margin-right: 0;
+        margin-left: 0; */
+    }
+}
+
+.box:nth-child(1) {
+    background-color: #ffd2bf;
+}
+
+.box:nth-child(2) {
+    background-color: #9ff5ce;
+}
+
+.box:nth-child(3) {
+    background-color: #f3b8ee;
+}
+
+.box:nth-child(4) {
+    background-color: #d8bcff;
+}
+
+.box:nth-child(5) {
+    background-color: #a2e2fd;
+}
+
+.box:nth-child(6) {
+    background-color: #feb8b8;
+}
+
+
+/* -------------------------- */
+
+.services_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-modal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.services_modal-content {
+  width: 500px;
+  position: relative;
+  background-color: var(--container-color);
+  padding: 4.5rem 2.5rem 2.5rem;
+  border-radius: 1.5rem;
+}
+
+
+.services_modal-title{
+  text-align: center;
+  font-size:  1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.active-modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+
+  .services_content {
+      padding: 3.5rem 0.5rem 1.25rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+    .services_modal-content {
+        padding: 4.5rem 1.5rem 2.5rem;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+  .services_content {
+      padding-right: 6rem;
+  }
+}
+/* Movies.css */
+
+/* Add styles for the filter container */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px;
+    align-items: center;
+  }
+  
+  /* Styles for the search input */
+  .search-input {
+   
+    width: 210px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Styles for the filter select and input */
+  .filter-select,
+  .filter-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Styles for the reset button */
+  .reset-btn {
+    padding: 8px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .reset-btn:hover {
+    background-color: #4d4b4b;
+  }
+  .add-btn:hover {
+    background-color: #4d4b4b;
+  }
+  
+  /* Styles for the no movies message */
+  .no-movies {
+    text-align: center;
+    color: #555;
+    margin-top: 20px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    margin: 20px;
+    color: white;
+  }
+  
+  .movies-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .movies-table th,
+  .movies-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .movies-table th {
+    background-color: #222322; /* Green */
+    color: white;
+  }
+  
+  
+  
+  .movies-table tr:hover {
+    background-color: #474747;
+  }
+  
+  .table-btn {
+    padding: 6px 10px;
+    margin-right: 5px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .edit-btn {
+    background-color: rgb(10, 185, 10); /* Blue */
+    color: white;
+    padding: 6px 19px;
+  }
+  
+  .edit-btn:hover {
+    background-color: rgb(7, 147, 7);
+  }
+  
+  .delete-btn {
+    background-color: #f44336; /* Red */
+    color:black
+  }
+  .delete-btn:hover {
+    background-color: rgb(175, 9, 9);
+  }
+
+  .head{
+    padding: 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sort-select{
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    border-color: black;
+    margin: 10px;
+    padding: 9px 4px;
+  }
+  .pagination-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nextpagination-btn{
+    color:white;
+    background-color: black;
+    padding: 7px 19px;
+    border-radius: 5px;
+    margin:10px;
+    margin-bottom: 20px;
+  }
+  .previouspagination-btn{
+    color:white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+    margin:10px;
+    margin-bottom: 20px;
+    
+  }
+  .nextpagination-btn:hover{
+    background-color: #474747;
+  }
+  .previouspagination-btn:hover{
+    background-color: #474747;
+  }
+  .current-page{
+    background-color: white;
+    margin:10px;
+    margin-bottom: 20px;
+    padding: 7px;
+    border-radius: 5px;
+  }
