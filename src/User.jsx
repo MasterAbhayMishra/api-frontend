@@ -34,10 +34,14 @@ function Movies() {
   // Fetch movies from the backend with pagination and sorting
   const fetchMovies = (page, sort) => {
     axios
-      .post("http://localhost:3001/paginate", {
-        page: page,
-        sort: sort,
-      }, { withCredentials: true })
+      .post(
+        "https://app-backend-nu.vercel.app/paginate",
+        {
+          page: page,
+          sort: sort,
+        },
+        { withCredentials: true }
+      )
       .then((result) => {
         if (result.data.success) {
           setMovies(result.data.data);
@@ -54,7 +58,7 @@ function Movies() {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this movie?")) {
       axios
-        .delete(`http://localhost:3001/deleteMovie/${id}`)
+        .delete(`https://app-backend-nu.vercel.app/deleteMovie/${id}`)
         .then((res) => {
           console.log(res);
           // After deletion, refetch the current page
@@ -68,7 +72,7 @@ function Movies() {
   const handleSubmitCreate = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/createMovie", {
+      .post("https://app-backend-nu.vercel.app/createMovie", {
         title,
         genre,
         release_date: releaseDate,
@@ -93,7 +97,7 @@ function Movies() {
   const handleSubmitUpdate = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:3001/updateMovie/${movieId}`, {
+      .put(`https://app-backend-nu.vercel.app/updateMovie/${movieId}`, {
         title,
         genre,
         release_date: releaseDate,
@@ -204,7 +208,10 @@ function Movies() {
 
       {/* Header with Add Button and Sort Options */}
       <header className="header">
-        <button className="add-btn" onClick={() => toggleTab(1)}>
+        <button
+          className="add-btn"
+          onClick={() => toggleTab(1)}
+        >
           + Add Movie
         </button>
         <select
@@ -237,7 +244,10 @@ function Movies() {
           <option value="">All Genres</option>
           {/* Dynamically populate genres based on available data */}
           {[...new Set(movies.map((movie) => movie.genre))].map((genre) => (
-            <option key={genre} value={genre}>
+            <option
+              key={genre}
+              value={genre}
+            >
               {genre}
             </option>
           ))}
@@ -261,7 +271,10 @@ function Movies() {
           max="10"
         />
 
-        <button onClick={resetFilters} className="reset-btn">
+        <button
+          onClick={resetFilters}
+          className="reset-btn"
+        >
           Reset Filters
         </button>
       </div>
@@ -320,7 +333,10 @@ function Movies() {
             {/* Show a message if no movies match the filters */}
             {filteredMovies.length === 0 && (
               <tr>
-                <td colSpan="5" className="no-movies">
+                <td
+                  colSpan="5"
+                  className="no-movies"
+                >
                   No movies match the current filters.
                 </td>
               </tr>
@@ -410,7 +426,10 @@ function Movies() {
                 required
               />
             </div>
-            <button type="submit" className="input-btn">
+            <button
+              type="submit"
+              className="input-btn"
+            >
               ADD
             </button>
             <button
@@ -484,7 +503,10 @@ function Movies() {
                 required
               />
             </div>
-            <button type="submit" className="input-btn">
+            <button
+              type="submit"
+              className="input-btn"
+            >
               SUBMIT
             </button>
             <button
